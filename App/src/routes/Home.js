@@ -8,13 +8,32 @@ class Home extends React.Component {
     isLoading: true,
     movies: [],
   };
-  getMovies = async() => {
-     const {
-       data: {
-         data: {movies},
-       },
-      } = await axios.get("https://yts-proxy.now.sh/list_movies.json?sort_by=rating");
-    this.setState({movies, isLoading: false});
+  getMovies = () => {
+    this.movies = [
+      {
+        "id": 30440,
+        "year": 2008,
+        "title": "Avenged Sevenfold: Live in the L.B.C. & Diamonds in the Rough",
+        "summary": "Avenged Sevenfold recorded their first live DVD at Long Beach Arena.",
+        "medium_cover_image": "https://yts.mx/assets/images/movies/avenged_sevenfold_live_in_the_l_b_c_diamonds_in_the_rough_2008/medium-cover.jpg",
+        "genres": [
+          "Action",
+          "Documentary"
+        ],
+      },
+      {
+        "id": 30321,
+        "year": 2007,
+        "title": "제프리",
+        "summary": "genius",
+        "medium_cover_image": "https://avatars.githubusercontent.com/u/63241142?v=4",
+        "genres": [
+          "CODIING",
+          "GAME"
+        ],
+      }
+    ];
+    this.setState({movies: this.movies, isLoading: false});
   };
   componentDidMount() {
     this.getMovies();
