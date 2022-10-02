@@ -13,7 +13,7 @@
     font-weight: 300;
 }
 
-.movies {
+.games {
     display: grid;
     grid-template-columns: repeat(2, minmax(400px, 1fr));
     grid-gap: 100px;
@@ -23,7 +23,7 @@
 }
 
 @media screen and (max-width:100px) {
-    .movies {
+    .games {
         grid-template-columns: 1fr;
         width: 100%;
     }
